@@ -15,10 +15,10 @@ var rollbar = new Rollbar({
 
 //unicycle();
 
-app.get('/', function)(req, res){
+app.get('/', function(req, res){
  res.sendFile(path.join(__dirname, "///index.html"))
  rollbar.log("Hello world!");
 })
 
 const port = process.env.PORT || 4567
-app.listen(port, {} => console.log('Take us to warp 4567'))
+app.listen(port, () => console.log('Take us to warp 4567'))
