@@ -11,11 +11,14 @@ var rollbar = new Rollbar({
 });
 
 // record a generic message and send it to Rollbar
-rollbar.log("Hello world!");
+
+
+//unicycle();
 
 app.get('/', function)(req, res){
  res.sendFile(path.join(__dirname, "///index.html"))
+ rollbar.log("Hello world!");
 })
 
 const port = process.env.PORT || 4567
-app.listen(4567, {} => console.log('Take us to warp 4567'))
+app.listen(port, {} => console.log('Take us to warp 4567'))
